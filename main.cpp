@@ -8,4 +8,6 @@ int main() {
 
     engine.create_hero(Heros::guy);
     engine.run();
+    // while game is running cin an input
+    // pass imput into perform
 }

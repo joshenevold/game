@@ -1,10 +1,8 @@
 #pragma once
-
 #include "action.h"
 
-// Do nothing this turn
-class Rest : public Action {
+class CloseDoor : public Action {
    public:
-    // Rest();
+    // CloseDoor();
     Result perform(Engine& engine) override;
 };

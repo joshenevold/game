@@ -1,5 +1,3 @@
 #include "rest.h"
 
-Result Rest::perform(Engine&) {
-    return success();
-}
+Result Rest::perform(Engine&) { return success(); }
