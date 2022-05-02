@@ -127,3 +127,28 @@ Move(Action)
  - void open();
  - void close();
  - it is just flipping a boolian to change the picture that shows
+
+
+ ## attack 4/2
+
+  Making a function
+ ```C++ 
+Actor::attack(defender){
+    weapon.use(Engine& engine, Actor& attacker, Actor& defender)
+};
+ ``` 
+  - weapon.use(defender)
+        - Event Hit
+            - animate
+            - take_damage()
+
+Flow of an attack
+1. actor generates Attack action on defender
+2. Attack Action call actor.attack(defender)
+3. Heros and Monsters defer damage calculations to Weapon
+4. weapon.use(Engine& engine, Actor& attacker, Actor& defender)
+5. Weapon generates Hit Event with its damage amount
+6. defender.take_damage(amount)
+
+- by having this separated out attack we are able to add a lot of more variety of ways to do weapons
+- in class we will write code for hit and die

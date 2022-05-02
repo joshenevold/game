@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "engine.h"
+#include "updatefov.h"
 
 Result CloseDoor::perform(Engine& engine) {
     bool close_any_doors{false};
@@ -16,6 +17,7 @@ Result CloseDoor::perform(Engine& engine) {
             Door& door = engine.dungeon.doors.at(position);
             if (door.is_open()) {
                 door.close();
+                engine.events.add(UpdateFOV{});
                 tile.walkable = false;
                 close_any_doors = true;
             }
