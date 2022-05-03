@@ -33,4 +33,16 @@ MonsterType goblin() {
     return {"goblin", default_speed, health, std::make_shared<None>(),
             default_behavior};
 }
+
+MonsterType orc_shaman() {
+    int health = 4;
+    return {"goblin", default_speed, health, std::make_shared<None>(),
+            default_behavior};
+}
+
+MonsterType skeleton() {
+    int health = 4;
+    return {"skeleton", default_speed, health, std::make_shared<None>(),
+            default_behavior};
+}
 }  // namespace Monsters
