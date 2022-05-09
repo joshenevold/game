@@ -129,7 +129,7 @@ Move(Action)
  - it is just flipping a boolian to change the picture that shows
 
 
- ## attack 4/2
+ ## attack 5/2
 
   Making a function
  ```C++ 
@@ -152,3 +152,37 @@ Flow of an attack
 
 - by having this separated out attack we are able to add a lot of more variety of ways to do weapons
 - in class we will write code for hit and die
+
+
+## something 5/4
+ - can go to itch.io to get cool animations or weapons
+
+ ```C++ 
+Move::perform(){
+    if actor ---> defender ---->
+        Attacker ------> actor.attack(defender)
+};      actor.attck(defender) ---> weopon.use(engin, attacker, defender)
+        engine.events.add(Hit{defender,10})
+        Hit --->Hit::execute()
+        defender.take_damage()
+        if defender.health <= 0 
+            add(die{defender})
+ ``` 
+
+ We will write hit in class
+
+ for attack class
+
+ Attacker(Actor* defender)
+    defender -> thing
+
+    OR
+Attacker (Actor& defender)
+
+## checpoint 4 
+ ``` C++
+    weapon::use()
+    events.add (swing)
+            when_done
+                Hit
+    

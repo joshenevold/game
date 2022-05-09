@@ -15,6 +15,4 @@ int main() {
     MonsterType skel = Monsters::skeleton();
     engine.create_monster(skel);
     engine.run();
-    // while game is running cin an input
-    // pass imput into perform
 }

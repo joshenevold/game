@@ -4,10 +4,12 @@
 #include <memory>
 
 #include "actor.h"
+#include "attack.h"
 #include "door.h"
 #include "engine.h"
 #include "hero.h"
 #include "opendoor.h"
+#include "rest.h"
 
 // move constructor
 Move::Move(const Vec& direction) : direction{direction} {};
@@ -19,14 +21,20 @@ Result Move::perform(Engine& engine) {
     if (tile.is_wall()) {
         std::cout << "cant go there, that is wall \n" << std::flush;
         return failure();
-    } else if (tile.actor) {
-        std::cout << "tag you are it \n" << std::flush;
-        return success();  // alternative(Attack{*tile.actor})
+    }
+    if (tile.actor) {
+        std::cout << "im trying to attack you \n" << std::flush;
+        if (actor->team != tile.actor->team) {
+            return alternative(Attack(*tile.actor));
+        } else {
+            return alternative(Rest());
+        }
+        // alternative(Attack{*tile.actor})
         //                                      Actor& actor
         //                                      actor.attack(defender);
     }
 
-    else if (tile.is_door()) {
+    if (tile.is_door()) {
         Door& door = engine.dungeon.doors.at(position);
         if (door.is_open()) {
             actor->move_to(position);
@@ -34,12 +42,12 @@ Result Move::perform(Engine& engine) {
         } else {
             return alternative(Opendoor{position});
         }
-    } else {
-        std::cout << "move there \n" << std::flush;
-        actor->move_to(position);
-        return success();
     }
-};
+
+    std::cout << "move there \n" << std::flush;
+    actor->move_to(position);
+    return success();
+}
 
 // Move::Move(const Vec& direction) : direction{direction} {};
 
