@@ -3,6 +3,7 @@ add_library(weapons
   cleaver.cpp
   hammer_big.cpp
   staff_green.cpp
+  spear.cpp
   )
 
 target_include_directories(weapons PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

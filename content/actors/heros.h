@@ -6,6 +6,7 @@
 #include "move.h"
 #include "none.h"
 #include "rest.h"
+#include "spear.h"
 
 namespace Heros {
 
@@ -32,6 +33,6 @@ std::unordered_map<std::string, Reaction> key_bindings = {
 
 constexpr int default_speed{8};
 const HeroType nobody{"none", default_speed, 1, std::make_shared<None>(), {}};
-const HeroType guy{"dragon", default_speed, 25, std::make_shared<Cleaver>(2),
+const HeroType guy{"dragon", default_speed, 25, std::make_shared<Spear>(2),
                    key_bindings};
 }  // namespace Heros

@@ -162,6 +162,7 @@ Move::perform(){
     if actor ---> defender ---->
         Attacker ------> actor.attack(defender)
 };      actor.attck(defender) ---> weopon.use(engin, attacker, defender)
+    animation
         engine.events.add(Hit{defender,10})
         Hit --->Hit::execute()
         defender.take_damage()

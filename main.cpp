@@ -14,5 +14,9 @@ int main() {
     engine.create_monster(shaman);
     MonsterType skel = Monsters::skeleton();
     engine.create_monster(skel);
+    engine.create_monster(skel);
+    engine.create_monster(skel);
+    engine.create_monster(skel);
+
     engine.run();
 }
