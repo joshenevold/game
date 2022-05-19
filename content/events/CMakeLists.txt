@@ -4,7 +4,8 @@ add_library(events
   die.cpp
   swing.cpp
   stab.cpp
+  spawn_monster.cpp
   )
 
 target_include_directories(events PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(events PUBLIC engine)
+target_link_libraries(events PUBLIC engine actors)

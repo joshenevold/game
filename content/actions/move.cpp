@@ -19,11 +19,11 @@ Result Move::perform(Engine& engine) {
     Tile& tile = engine.dungeon.tiles(position);
     actor->change_direction(direction);
     if (tile.is_wall()) {
-        std::cout << "cant go there, that is wall \n" << std::flush;
+        // std::cout << "cant go there, that is wall \n" << std::flush;
         return failure();
     }
     if (tile.actor) {
-        std::cout << "im trying to attack you \n" << std::flush;
+        // std::cout << "im trying to attack you \n" << std::flush;
         if (actor->team != tile.actor->team) {
             return alternative(Attack(*tile.actor));
         } else {
@@ -44,7 +44,7 @@ Result Move::perform(Engine& engine) {
         }
     }
 
-    std::cout << "move there \n" << std::flush;
+    // std::cout << "move there \n" << std::flush;
     actor->move_to(position);
     return success();
 }

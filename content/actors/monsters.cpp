@@ -6,12 +6,16 @@
 #include "cleaver.h"
 #include "engine.h"
 #include "hammer_big.h"
+#include "knife.h"
 #include "monstertype.h"
 #include "move.h"
 #include "none.h"
 #include "randomness.h"
 #include "rest.h"
+#include "spear.h"
+#include "spiked_club.h"
 #include "staff_green.h"
+#include "sword_rusty.h"
 #include "wander.h"
 
 namespace Monsters {
@@ -47,7 +51,73 @@ MonsterType orc_shaman() {
 
 MonsterType skeleton() {
     int health = 4;
-    return {"skeleton", default_speed, health, std::make_shared<Hammer_big>(3),
+    return {"skeleton", default_speed, health, std::make_shared<Knife>(1),
             default_behavior};
+}
+
+MonsterType zombie_small() {
+    int health = 4;
+    return {"zombie_small", default_speed, health, std::make_shared<Spear>(3),
+            default_behavior};
+}
+
+MonsterType zombie() {
+    int health = 4;
+    return {"zombie", default_speed, health, std::make_shared<Sword_rusty>(3),
+            default_behavior};
+}
+
+MonsterType zombie_big() {
+    int health = 4;
+    return {"zombie_big", default_speed, health,
+            std::make_shared<Spiked_club>(3), default_behavior};
+}
+
+MonsterType muddy() {
+    int health = 4;
+    return {"muddy", default_speed, health, std::make_shared<Spear>(3),
+            default_behavior};
+}
+
+MonsterType orc() {
+    int health = 4;
+    return {"orc", default_speed, health, std::make_shared<Spiked_club>(3),
+            default_behavior};
+}
+
+MonsterType orc_masked() {
+    int health = 4;
+    return {"orc_masked", default_speed, health, std::make_shared<Cleaver>(3),
+            default_behavior};
+}
+
+MonsterType ogre() {
+    int health = 4;
+    return {"ogre", default_speed, health, std::make_shared<Spiked_club>(3),
+            default_behavior};
+}
+
+MonsterType necromancer() {
+    int health = 4;
+    return {"necromancer", default_speed, health,
+            std::make_shared<Staff_green>(3), default_behavior};
+}
+
+MonsterType demon_tiny() {
+    int health = 4;
+    return {"demon_tiny", default_speed, health, std::make_shared<Spear>(3),
+            default_behavior};
+}
+
+MonsterType demon() {
+    int health = 4;
+    return {"demon", default_speed, health, std::make_shared<Sword_rusty>(3),
+            default_behavior};
+}
+
+MonsterType demon_big() {
+    int health = 4;
+    return {"demon_big", default_speed, health,
+            std::make_shared<Sword_rusty>(3), default_behavior};
 }
 }  // namespace Monsters
